@@ -1,17 +1,28 @@
 var app = angular.module('plunker', ['angular-fancytree']);
 
-app.controller('MainCtrl', function($scope, $timeout, dataFactory, fancytreeFactory) {
+app.controller('MainCtrl', function($scope, dataFactory, fancytreeFactory) {
   $scope.name = 'World';
   $scope.antalToppNoder = 20;
   $scope.getCurrentTree = (antal) => {
-    $scope.treeData = dataFactory.generateTree(antal,false);
-    fancytreeFactory.setData($scope.treeData, 'exampleFancytree');
-    $scope.$broadcast('reload',null);
-    $timeout(()=> {
-        var tree = $.ui.fancytree.getTree();
-        tree.reload();
-    });
+    var newTree = dataFactory.generateTree(antal,false);
+    //This way is not really working
+    //$scope.treeData = dataFactory.generateTree(antal,false);
+    //fancytreeFactory.setData($scope.treeData, 'exampleFancytree');
+    //$scope.$broadcast('reload',null);
+    //var tree = $.ui.fancytree.getTree();
+    //tree.reload();
+    
+    //Trying it another way
+    var tree = $('#exampleFancytree').fancytree('getTree');
+    tree.reload(newTree);
+    console.log('Trying to set new data', newTree);
+
   };
+  $scope.expandAll = () => {
+    $("#exampleFancytree").fancytree("getRootNode").visit(function(node){
+      node.setExpanded(true);
+    });    
+  }
 
   //$scope.treeData = dataFactory.generateTree($scope.antalToppNoder,false);//dataFactory.simpleFancyTree;
   $scope.treeData = dataFactory.simpleFancyTree;

@@ -143,7 +143,7 @@ angular.module('plunker')
 	
 	var simpleFancyTree = [
     {title: "Node 1", key: "1"},
-    {title: "Folder 2", key: "2", folder: true, children: [
+    {title: "Folder 2", key: "2", folder: true, expanded: true, children: [
         {title: "Node 2.1", key: "3", myOwnAttr: "abc"},
         {title: "Node 2.2", key: "4"}
     ]}
@@ -155,6 +155,7 @@ angular.module('plunker')
     var node = {
         title: 'Node_' + automaticId,
         key: automaticId,
+        expanded: true,
         children: []
     }
     while (Math.floor(Math.random() * 10) > 5) {

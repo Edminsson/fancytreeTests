@@ -23,6 +23,7 @@
     <div>
       <label for="">Antal toppnoder</label> <input type="number" ng-model="antalToppNoder">
       <button ng-click="getCurrentTree(antalToppNoder)">GetTree</button>
+      <button ng-click="expandAll()">Expand all nodes</button>
       <fancytree id="exampleFancytree" disabled="false" checkbox="true" debuglevel="0"></fancytree>
     </div>
   </body>
