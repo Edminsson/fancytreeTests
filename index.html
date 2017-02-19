@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <link data-require="bootstrap@3.3.7" data-semver="3.3.7" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.fancytree/2.21.0/skin-awesome/ui.fancytree.min.css" />
+    <script data-require="jquery@2.2.4" data-semver="2.2.4" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script data-require="bootstrap@3.3.7" data-semver="3.3.7" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link rel="stylesheet" href="style.css" />
+    <script data-require="angular.js@1.5.x" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.10/angular.min.js" data-semver="1.5.10"></script>
+    <script data-require="jqueryui@1.9.1" data-semver="1.9.1" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.fancytree/2.21.0/jquery.fancytree-all.min.js"></script>
+    <script src="angular-fancytree.js"></script>
+    <script src="app.js"></script>
+    <script src="dataFactory.js"></script>
+  </head>
+
+  <body ng-controller="MainCtrl">
+    <p>Hello {{name}}!</p>
+    <div>
+      <label for="">Antal toppnoder</label> <input type="number" ng-model="antalToppNoder">
+      <button ng-click="getCurrentTree(antalToppNoder)">GetTree</button>
+      <fancytree id="exampleFancytree" disabled="false" checkbox="true" debuglevel="0"></fancytree>
+    </div>
+  </body>
+
+</html>
