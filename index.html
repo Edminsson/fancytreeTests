@@ -6,6 +6,7 @@
     <title>AngularJS Plunker</title>
     <link data-require="bootstrap@3.3.7" data-semver="3.3.7" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.fancytree/2.21.0/skin-awesome/ui.fancytree.min.css" />
+  	<link href="//cdn.jsdelivr.net/jquery.fancytree/2/skin-win8/ui.fancytree.min.css" type="text/css" rel="stylesheet" />
     <script data-require="jquery@2.2.4" data-semver="2.2.4" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script data-require="bootstrap@3.3.7" data-semver="3.3.7" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>document.write('<base href="' + document.location + '" />');</script>
@@ -24,7 +25,7 @@
       <label for="">Antal toppnoder</label> <input type="number" ng-model="antalToppNoder">
       <button ng-click="getCurrentTree(antalToppNoder)">GetTree</button>
       <button ng-click="expandAll()">Expand all nodes</button>
-      <fancytree id="exampleFancytree" disabled="false" checkbox="true" debuglevel="0"></fancytree>
+      <fancytree id="exampleFancytree" disabled="false" checkbox="false" autocollapse="false" debuglevel="0"></fancytree>
     </div>
   </body>
 
